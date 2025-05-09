@@ -1,0 +1,335 @@
+/* Estilos Globais e Temas */
+:root {
+    --font-family: 'Arial', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 1em 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--nav-link-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-speed) ease;
+}
+
+nav ul li a:hover {
+    color: var(--nav-link-hover-color);
+}
+
+.theme-selector {
+    display: flex;
+    align-items: center;
+}
+
+.theme-selector label {
+    margin-right: 10px;
+}
+
+#theme-select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+main section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--section-border-color);
+}
+
+main section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--card-heading-color);
+}
+
+.project-card p {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+
+.project-card a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+.project-card a.github-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border-radius: 5px;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.project-card a.github-link:hover {
+    background-color: var(--button-hover-bg);
+    text-decoration: none;
+}
+
+#editor textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    min-height: 150px;
+}
+
+.markdown-preview {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--preview-bg);
+    min-height: 100px;
+}
+
+.markdown-preview h1, .markdown-preview h2, .markdown-preview h3 {
+    color: var(--heading-color);
+}
+.markdown-preview ul, .markdown-preview ol {
+    margin-left: 20px;
+}
+.markdown-preview code {
+    background-color: var(--code-bg);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.markdown-preview pre {
+    background-color: var(--code-bg);
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+.markdown-preview blockquote {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 10px;
+    margin-left: 0;
+    font-style: italic;
+    color: var(--blockquote-color);
+}
+
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Tema Claro (Padrão) */
+body[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --heading-color: #1a1a1a;
+    --link-color: #007bff;
+    --border-color: #dddddd;
+    --section-border-color: #eeeeee;
+    --header-bg: #f8f9fa;
+    --header-text: #333333;
+    --nav-link-color: #555555;
+    --nav-link-hover-color: #007bff;
+    --footer-bg: #f8f9fa;
+    --footer-text: #333333;
+    --card-bg: #ffffff;
+    --card-heading-color: #007bff;
+    --input-bg: #ffffff;
+    --preview-bg: #f9f9f9;
+    --button-bg: #007bff;
+    --button-text: #ffffff;
+    --button-hover-bg: #0056b3;
+    --code-bg: #e9ecef;
+    --blockquote-color: #555;
+    --accent-color: #007bff;
+}
+
+/* Tema Escuro */
+body[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --link-color: #61dafb;
+    --border-color: #444444;
+    --section-border-color: #333333;
+    --header-bg: #0d0d0d;
+    --header-text: #e0e0e0;
+    --nav-link-color: #bbbbbb;
+    --nav-link-hover-color: #61dafb;
+    --footer-bg: #0d0d0d;
+    --footer-text: #e0e0e0;
+    --card-bg: #2c2c2c;
+    --card-heading-color: #61dafb;
+    --input-bg: #2c2c2c;
+    --preview-bg: #222222;
+    --button-bg: #61dafb;
+    --button-text: #1a1a1a;
+    --button-hover-bg: #3e9cb8;
+    --code-bg: #383838;
+    --blockquote-color: #aaa;
+    --accent-color: #61dafb;
+}
+
+/* Tema Retrô */
+body[data-theme="retro"] {
+    --bg-color: #f5e6cc; /* Creme */
+    --text-color: #5a3e2b; /* Marrom escuro */
+    --heading-color: #8c5e3c; /* Marrom médio */
+    --link-color: #c7824f; /* Laranja queimado */
+    --border-color: #c4a287; /* Marrom claro */
+    --section-border-color: #d3b89c;
+    --header-bg: #8c5e3c; /* Marrom médio */
+    --header-text: #f5e6cc; /* Creme */
+    --nav-link-color: #f5e6cc;
+    --nav-link-hover-color: #ffe0b2; /* Laranja claro */
+    --footer-bg: #8c5e3c;
+    --footer-text: #f5e6cc;
+    --card-bg: #fff8e1; /* Creme mais claro */
+    --card-heading-color: #c7824f;
+    --input-bg: #fff8e1;
+    --preview-bg: #fdf5e6;
+    --button-bg: #c7824f;
+    --button-text: #f5e6cc;
+    --button-hover-bg: #a5673f;
+    --code-bg: #e0d4c0;
+    --blockquote-color: #7a5033;
+    --accent-color: #c7824f;
+    font-family: 'Georgia', serif;
+}
+
+/* Tema Futurista */
+body[data-theme="futuristic"] {
+    --bg-color: #0a0f1e; /* Azul noite profundo */
+    --text-color: #c0c5ce; /* Cinza azulado claro */
+    --heading-color: #7df9ff; /* Ciano neon */
+    --link-color: #f07cff; /* Magenta neon */
+    --border-color: #303952; /* Azul aço */
+    --section-border-color: #222a3f;
+    --header-bg: #121829; /* Azul noite mais escuro */
+    --header-text: #7df9ff;
+    --nav-link-color: #c0c5ce;
+    --nav-link-hover-color: #f07cff;
+    --footer-bg: #121829;
+    --footer-text: #c0c5ce;
+    --card-bg: #1a2035; /* Azul noite médio */
+    --card-heading-color: #7df9ff;
+    --input-bg: #1a2035;
+    --preview-bg: #151a2e;
+    --button-bg: #f07cff;
+    --button-text: #0a0f1e;
+    --button-hover-bg: #d953e8;
+    --code-bg: #252c40;
+    --blockquote-color: #a0a5ae;
+    --accent-color: #7df9ff;
+    font-family: 'Orbitron', sans-serif; /* Fonte futurista, pode precisar de importação */
+}
+
+/* Aplicar cores de fundo e texto globais */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .theme-selector {
+        margin-top: 15px;
+    }
+}
+
